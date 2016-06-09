@@ -1,16 +1,16 @@
-$ORIGIN example.com.     ; designates the start of this zone file in the namespace
+$ORIGIN election.or.     ; designates the start of this zone file in the namespace
 $TTL 1h                  ; default expiration time of all resource records without their own TTL value
-example.com.  IN  SOA   ns1.example.com. cs091747.example.com. ( 2007120710 1d 2h 4w 1h )
-example.com.  IN  NS    ns1                    ; ns.example.com is a nameserver for example.com
-example.com.  IN  NS    ns2
+election.or.  IN  SOA   ns1.election.or. cs091747.election.or. ( 2007120710 1d 2h 4w 1h )
+election.or.  IN  NS    ns1                    ; ns.election.or is a nameserver for election.or
+election.or.  IN  NS    ns2
 
-example.com.  IN  A     192.168.20.251             ; IPv4 address for example.com
+election.or.  IN  A     192.168.20.251             ; IPv4 address for election.or
 
-ns1             IN  A   192.168.20.1             ; IPv4 address for ns.example.com
+ns1             IN  A   192.168.20.1             ; IPv4 address for ns.election.or
 ns2             IN  A   192.168.20.2
 
-;www           IN  CNAME example.com.          ; www.example.com is an alias for example.com
-;wwwtest       IN  CNAME www                   ; wwwtest.example.com is another alias for www.example.com
-;mail          IN  A     192.0.2.3             ; IPv4 address for mail.example.com
-;mail2         IN  A     192.0.2.4             ; IPv4 address for mail2.example.com
-;mail3         IN  A     192.0.2.5             ; IPv4 address for mail3.example.com
+;www           IN  CNAME election.or.          ; www.election.or is an alias for election.or
+;wwwtest       IN  CNAME www                   ; wwwtest.election.or is another alias for www.election.or
+;mail          IN  A     192.0.2.3             ; IPv4 address for mail.election.or
+;mail2         IN  A     192.0.2.4             ; IPv4 address for mail2.election.or
+;mail3         IN  A     192.0.2.5             ; IPv4 address for mail3.election.or
