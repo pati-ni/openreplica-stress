@@ -19,8 +19,8 @@ start)
                     $ZK start $LOGGER_CONF\""
 ;;
 stop)
-            ssh $LOGGER_NODE "bash -c \"\
-                    $ZK $3 $LOGGER_CONF;
+          ssh $LOGGER_NODE "bash -c \"\
+                    $ZK stop $LOGGER_CONF;
                 rm -rf $LOGGER_DATADIR;\
                 rm -rf $LOGGER_DATALOGDIR\""
 
