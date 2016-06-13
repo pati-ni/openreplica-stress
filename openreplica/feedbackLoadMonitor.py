@@ -57,6 +57,7 @@ class FeedBackMonitor:
 
     def launch_clients(self, clients,id='test'):
         connection_string = ','.join(self.connections[id])
+
         client_script = '/home/students/cs091747/openreplica/client.sh'
         for c in range(clients):
             spawn_process(self.clients, client_script, connection_string, self.client_seed + self.client_spawned, 'test'+str(c))
@@ -67,13 +68,8 @@ class FeedBackMonitor:
 
 if __name__ == '__main__':
     cls = FeedBackMonitor()
-    for i in range(1):
-        id = 'test'+str(i)
-        cls.launch_replicas(4, id=id)
-        cls.launch_clients(1, id=id)
-
-
-
+    cls.launch_replicas(4)
+    cls.launch_clients(1)
 
 
 

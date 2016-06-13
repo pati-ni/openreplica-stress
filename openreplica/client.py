@@ -13,7 +13,7 @@ class OrBase(ClientBase):
         self.election_method = method
         self.win_method = win
         self.args = args
-        ClientBase.__init__(self, id,logger_interval=6)
+        ClientBase.__init__(self, id,logger_interval=5)
 
 
     @client.timer
@@ -27,5 +27,10 @@ class OrBase(ClientBase):
 
 
 if __name__ == '__main__':
-    test = OrBase(sys.argv[2], Lock, Lock.acquire, Lock.release, sys.argv[1])
+    print 'Start'
+    test = OrBase('12', Lock, Lock.acquire, Lock.release, sys.argv[1])
+    print dir(test.obj)
     test.run()
+
+
+
