@@ -74,14 +74,15 @@ class Controller(Service):
         devnull = open(os.devnull, 'wb')
         base_cmd = ['ssh', node, '-t','-t', '/home/students/cs091747/openreplica/openr-env/bin/concoord','replica']
         options = ['-o', openreplica_object, '-p',str(port)]
-        if not node in self.nameserver:
-            self.nameserver.add(node)
-            options.append('-n')
-            options.append('election.or')
+        # if not node in self.nameserver:
+        #     self.nameserver.add(node)
+        #     options.append('-n')
+        #     options.append('election.or')
         if self.alive:
             options.append('-b')
             alive = sorted(list(set(self.alive)))
             options.append(alive[0])
+        # options.append('-d')
 
 
         cmd = base_cmd + options

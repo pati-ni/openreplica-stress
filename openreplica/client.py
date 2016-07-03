@@ -28,11 +28,14 @@ class OrBase(ClientBase):
     def benchmark(self):
         self.election_method(self.obj, self.int_id)
         #self.win(id)
-        self.win_method(self.obj, self.int_id)
+
 
     def run(self):
         while self.running:
             self.benchmark()
+            self.win(self.int_id)
+            self.win_method(self.obj, self.int_id)
+
 
     @client.complete_task
     def win(self, id):
